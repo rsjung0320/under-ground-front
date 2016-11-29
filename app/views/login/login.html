@@ -1,0 +1,47 @@
+<div class="container login">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Login via site</h3>
+        </div>
+        <div class="panel-body">
+          <form accept-charset="UTF-8" role="form" name="form" ng-submit="submit()">
+            <fieldset>
+              <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon">
+                  <i class="fa fa-envelope-o fa-fw"></i>
+                </span>
+                <input class="form-control" type="email" placeholder="Email address" autofocus ng-model="email" ng-required="true">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-key fa-fw"></i>
+                </span>
+                <input class="form-control" name="password" type="password" placeholder="Password" ng-click="hidePwErrorMsg()" ng-model="password" ng-required="true" ng-pattern="/^(?=.*\d)(?=.*[a-z])/" ng-minlength="6" ng-maxlength="20">
+              </div>
+              <div ng-hidden='pwHidden' ng-show="pwHidden" class="col-xs-12 col-md-12 alert alert-warning" role="alert">
+                  Password must be 6 to 20 characters in length and include Numbers.
+              </div>
+
+              <div class="checkbox">
+                <label>
+                  <input name="remember" type="checkbox" value="Remember Me" ng-model="remember">
+                  Remember Me
+                </label>
+                <!-- <a class="pull-right" href="">Forgot password?</a> -->
+              </div>
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+            </fieldset>
+          </form>
+          <hr/>
+          <center>
+            <!-- <h4>OR</h4> -->
+          </center>
+          <!-- <input class="btn btn-lg btn-facebook btn-block" ng-click="test()" value="Login via facebook"> -->
+          <input class="btn btn-lg btn-signup btn-block" ng-click="signUp()" value="Sign Up">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

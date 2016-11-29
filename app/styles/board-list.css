@@ -1,0 +1,46 @@
+
+@media (max-width: 768px) {
+  .boardlist{
+    padding-top: 65px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px)  {
+  .boardlist{
+    padding-top: 65px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .boardlist{
+    padding-top: 80px;
+  }
+}
+.con_view{
+  word-break:break-all;
+}
+.post-preview > a {
+  color: #434a53;
+}
+.post-preview > a > .post-title {
+  font-size: 28px;
+}
+.post-preview > a:hover,
+.post-preview > a:focus {
+  text-decoration: none;
+  /*color: #18bc9c;*/
+}
+.post-preview > a > .post-subtitle {
+  font-size: 17px;
+  margin-bottom: 15px;
+  color:#667
+}
+.post-preview > .post-meta {
+  color: #b5b5b5;
+  font-size: 13px;
+  margin: 0;
+}
+.line_bar{
+  margin-left: 15px;
+  margin-right: 15px;
+}
