@@ -8,7 +8,7 @@
  * Controller of the appApp
  */
 angular.module('appApp')
-  .controller('LoginCtrl', function($scope, $http, $location, $cookies, $timeout, $rootScope, ModalService, jwtHelper, loginService) {
+  .controller('LoginCtrl', function($scope, $http, $location, $cookies, $timeout, $rootScope, jwtHelper, loginService) {
 
     $scope.authorization = "";
     $scope.pwHidden = false;
@@ -27,7 +27,7 @@ angular.module('appApp')
         console.log(' $scope.remember :',  $scope.remember);
 
         // 로그인 서비스 이용
-        loginService.login(API, $http, $scope, jwtHelper, $cookies, ModalService, $rootScope, $location);
+        loginService.login(API, $http, $scope, jwtHelper, $cookies, $rootScope, $location);
 
       } else {
         // 에러팝업 띄우기.

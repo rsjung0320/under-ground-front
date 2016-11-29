@@ -8,15 +8,13 @@
  * Controller of the appApp
  */
 angular.module('appApp')
-  .controller('SignupCtrl', function($scope, $http, $location, ModalService) {
+  .controller('SignupCtrl', function($scope, $http, $location) {
 
     $scope.pwHidden = false;
 
     $scope.submit = function() {
       console.log("userName : " + $scope.userName);
       console.log("email : " + $scope.email);
-      console.log("password : " + $scope.password);
-      console.log("confirmPassword : " + $scope.confirmPassword);
 
       // 1. validation 체크를 한다.
       //  1.1 password와 confirmPassword와 일치하는지 본다.
@@ -39,36 +37,18 @@ angular.module('appApp')
 
               if (status === 201) {
                 // 3-1. susscess 시 path를 /로 이동시켜준다.
-                ModalService.showModal({
-                  templateUrl: '/views/global/signupSuceessModal',
-                  controller: 'signupSuceessModalController'
-                }).then(function(modal) {
-                  modal.element.modal();
-                  $scope.password = '';
-                });
+                alert('Successfully Signed Up!');
                 $location.path('/login');
               }
             }).error(function(data, status, headers, config) {
               if (status === 400) {
-                ModalService.showModal({
-                  templateUrl: '/views/global/signupAlreadyUserModal.html',
-                  controller: 'signupAlreadyUserModalController'
-                }).then(function(modal) {
-                  modal.element.modal();
-                  $scope.initForm();
-                });
+                alert('The user already exists.');
               } else {
-                alter(data);
+                alert(data);
               }
             });
         } else {
-          ModalService.showModal({
-            templateUrl: 'views/global/signupInvalidPasswordModal.html',
-            controller: 'signupInvalidPasswordModalController'
-          }).then(function(modal) {
-            modal.element.modal();
-            $scope.initPassword();
-          });
+          alert('Password and confirmed password do not match.');
         }
 
         // 3. 성공 시 메인화면으로 보낸다.\

@@ -11,45 +11,8 @@ angular.module('appApp')
   .controller('MainCtrl', function($scope, $http, $location, $cookies) {
 
     $scope.init = function() {
-      // $http({
-      //     url: API.getTeam,
-      //     method: "GET"
-      //       // skipAuthorization: true,
-      //       // headers: {"Authorization": $cookies.get('token')}
-      //   })
-      //   .success(function(boards) {
-      //     $scope.boards = boards;
-      //   }).error(function(error) {
-      //     console.log("error : ", error);
-      //   });
-
-      $http({
-          url: API.getBoardAll + "?size=6",
-          method: "GET"
-          // headers: {"Authorization": $cookies.get('token')}
-        })
-        .success(function(boards) {
-          console.log('board : ', boards );
-          // console.log('board : ', boards.content );
-          // $scope.boards = boards.content;
-          $scope.boards = boards.content;
-
-          // console.log(JSON.parse(boards));
-        }).error(function(error) {
-          console.log("error : ", error);
-        });
     }
 
     $scope.init();
-    $scope.findById = function(id){
-      $location.path('/board/' + id);
-    }
 
-    $scope.getImageSrc = "test";
-    //  = function(idx){
-    //   console.log('idx:', idx);
-    //   var src = "";
-    //
-    //   return src;
-    // }
   });

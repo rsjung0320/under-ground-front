@@ -1,23 +1,23 @@
 'use strict';
 
-describe('Controller: BoardCtrl', function () {
+describe('Controller: ArtistCtrl', function () {
 
   // load the controller's module
   beforeEach(module('appApp'));
 
-  var BoardCtrl,
+  var ArtistCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    BoardCtrl = $controller('BoardCtrl', {
+    ArtistCtrl = $controller('ArtistCtrl', {
       $scope: scope
       // place here mocked dependencies
     });
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(BoardCtrl.awesomeThings.length).toBe(3);
+    expect(ArtistCtrl.awesomeThings.length).toBe(3);
   });
 });

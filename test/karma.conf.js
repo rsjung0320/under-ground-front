@@ -31,8 +31,6 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/summernote/dist/summernote.js',
       'bower_components/angular-summernote/dist/angular-summernote.js',
-      'bower_components/angular-block-ui/dist/angular-block-ui.js',
-      'bower_components/angular-modal-service/dst/angular-modal-service.js',
       'bower_components/angular-jwt/dist/angular-jwt.js',
       'bower_components/angular-paging/dist/paging.js',
       'bower_components/angular-mocks/angular-mocks.js',

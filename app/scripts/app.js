@@ -10,8 +10,6 @@ angular
     'ngTouch',
     'ngSanitize',
     'summernote',
-    'blockUI',
-    'angularModalService',
     'angular-jwt',
     'bw.paging'
   ])
@@ -22,11 +20,15 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main/main'
       })
-      .when('/about', {
-        templateUrl: 'views/about/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about/about',
-        authenticated: true
+      .when('/movie', {
+        templateUrl: 'views/movie/movie.html',
+        controller: 'MovieCtrl',
+        controllerAs: 'movie/movie'
+      })
+      .when('/artist', {
+        templateUrl: 'views/artist/artist.html',
+        controller: 'ArtistCtrl',
+        controllerAs: 'artist/artist'
       })
       .when('/login', {
         templateUrl: 'views/login/login.html',
@@ -37,16 +39,6 @@ angular
         templateUrl: 'views/signup/signup.html',
         controller: 'SignupCtrl',
         controllerAs: 'signup/signup'
-      })
-      .when('/board/boardlist', {
-        templateUrl: 'views/board/boardlist.html',
-        controller: 'BoardlistCtrl',
-        controllerAs: 'board/boardlist'
-      })
-      .when('/board/:idx', {
-        templateUrl: 'views/board/board.html',
-        controller: 'BoardCtrl',
-        controllerAs: 'board/board'
       })
       .otherwise({
         redirectTo: '/'
@@ -125,13 +117,16 @@ angular
       var mainPages = ['/'];
       var restrictedMainPage = mainPages.indexOf($location.path()) === -1;
 
-      var boardListPages = ['/board/boardlist'];
-      var restrictedBoardListPage = boardListPages.indexOf($location.path()) === -1;
+      var moviePages = ['/movie'];
+      var restrictedmoviePages = moviePages.indexOf($location.path()) === -1;
+
+      var artistPages = ['/artist'];
+      var restrictedartistPages = artistPages.indexOf($location.path()) === -1;
 
       var signUpPages = ['/signup'];
       var restrictedsignUpPagesPage = signUpPages.indexOf($location.path()) === -1;
 
-      if (restrictedhomePage && restrictedMainPage && restrictedBoardListPage && !$cookies.get('token') && restrictedsignUpPagesPage) {
+      if (restrictedhomePage && restrictedMainPage && restrictedmoviePages && restrictedartistPages && !$cookies.get('token') && restrictedsignUpPagesPage) {
         $location.path('/login');
       }
     });
@@ -221,21 +216,14 @@ angular
     $rootScope.$on('$locationChangeStart', function() {
       $scope.currentPath = $location.path();
 
-      if ($scope.currentPath !== '/') {
-        $('.navbar-default').css('background-color', '#FFFFFF');
-      } else {
-        $('.navbar-default').css('background-color', 'rgba(255, 255, 255, .1 )');
-      }
+      // if ($scope.currentPath !== '/') {
+      //   $('.navbar-default').css('background-color', '#FFFFFF');
+      // } else {
+      //   $('.navbar-default').css('background-color', 'rgba(255, 255, 255, .1 )');
+      // }
     });
 
-    $scope.init = function() {
-      // blockUI.start('Loading...');
-      // $timeout(function() {
-      //   // Stop the block after some async operation.
-      //   blockUI.stop();
-      //   // $route.reload();
-      // }, 1000);
-    };
+    $scope.init = function() {};
     $scope.init();
 
     $scope.logout = function() {
@@ -249,14 +237,19 @@ angular
       $route.reload();
     };
 
-    $(window).scroll(function() {
-      var scroll = $(window).scrollTop();
-      if ($scope.currentPath === '/') {
-        if (scroll >= 100) {
-          $('.navbar-default').css('background-color', '#FFFFFF');
-        } else {
-          $('.navbar-default').css('background-color', 'rgba(255, 255, 255, .1 )');
-        }
+    // menu active 관련
+    $('.nav a').on('click', function() {
+      $('.nav').find('.active').removeClass('active');
+      $(this).parent().addClass('active');
+    });
+    
+    // menu 클릭 혹은 메뉴가 눌린 뒤 다른 곳이 클릭 된 경우 hide를 시킨다.
+    $(document).click(function(event) {
+      var clickover = $(event.target);
+      var $navbar = $(".navbar-collapse");
+      var _opened = $navbar.hasClass("in");
+      if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+        $navbar.collapse('hide');
       }
     });
   });
