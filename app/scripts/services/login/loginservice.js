@@ -10,7 +10,7 @@
 angular.module('appApp')
   .service('loginService', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    var login = function(API, $http, $scope, jwtHelper, $cookies, ModalService, $rootScope, $location){
+    var login = function(API, $http, $scope, jwtHelper, $cookies, $rootScope, $location){
       $http({
           url: API.postSignin,
           method: "POST",
@@ -37,13 +37,7 @@ angular.module('appApp')
 
         }).error(function(data, status, headers, config) {
           if(status === 400){
-            ModalService.showModal({
-              templateUrl: 'views/global/loginModal.html',
-              controller: 'loginModalController'
-            }).then(function(modal) {
-              modal.element.modal();
-              $scope.password = '';
-            });
+            alert('Check your ID or Password.');
           }
         });
 
