@@ -242,13 +242,13 @@ angular
       $('.nav').find('.active').removeClass('active');
       $(this).parent().addClass('active');
     });
-    
+
     // menu 클릭 혹은 메뉴가 눌린 뒤 다른 곳이 클릭 된 경우 hide를 시킨다.
     $(document).click(function(event) {
       var clickover = $(event.target);
-      var $navbar = $(".navbar-collapse");
-      var _opened = $navbar.hasClass("in");
-      if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+      var $navbar = $('.navbar-collapse');
+      var _opened = $navbar.hasClass('in');
+      if (_opened === true && !clickover.hasClass('navbar-toggle')) {
         $navbar.collapse('hide');
       }
     });
