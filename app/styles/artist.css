@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Lato');
+
+#artistheader {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#artistheader .avatar {
+  border-radius: 100%;
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin: 2rem 0;
+}
+
+#artistheader .avatar img {
+  border-radius: 100%;
+  display: block;
+}
+
+#artistheader h1 {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 200;
+  margin-bottom: 1.5rem;
+  line-height: 2.3rem;
+}
+
+#artistheader h1 strong {
+  color: white;
+  font-weight: 200;
+}
+
+#artistheader strong.key {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 200;
+}
+
+#artistheader h1 a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+}
+
+#artistheader ul{
+  margin-top: 2rem;
+}
+
+#artistheader ul.icons{
+  padding-left: 0px;
+}
+
+#artistheader ul.icons li {
+  display: inline-block;
+  border-radius: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+#artistheader ul.icons li:hover {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#artistheader ul.icons li a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+#artistheader ul.icons li a:before {
+  font-size: 1.5rem;
+}
+
+#artistheader ul.icons li .label {
+  display: none;
+}
+
+#artistcolumns {
+  margin-top: 20px;
+  column-width: 350px;
+  column-gap: 25px;
+}
+
+#artistcolumns figure {
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 1px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  ;
+}
+
+#artistcolumns figure img {
+  width: 100%;
+}
+
+#artistcolumns figure figcaption {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin-top: 11px;
+}

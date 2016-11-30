@@ -17,6 +17,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/artist.css">
     <link rel="stylesheet" href="styles/login.css">
     <!-- endbuild -->
 
@@ -50,6 +51,9 @@
             </li>
             <li ng-hide="loginFlag">
               <a href="#/login">LOG IN</a>
+            </li>
+            <li ng-hide="!loginFlag">
+              <a href="#/user">MY GROUND</a>
             </li>
             <li ng-hide="!loginFlag">
               <a href="" ng-click="logout()">LOGOUT</a>
@@ -182,6 +186,7 @@
     <script src="scripts/filters/contentcut.js"></script>
     <script src="scripts/controllers/movie/movie.js"></script>
     <script src="scripts/controllers/artist/artist.js"></script>
+    <script src="scripts/controllers/user/user.js"></script>
     <!-- endbuild -->
   </body>
 </html>
