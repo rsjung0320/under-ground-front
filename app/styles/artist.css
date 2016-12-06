@@ -90,6 +90,22 @@
   column-gap: 25px;
 }
 
+#artistcolumns .avatar {
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 40px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 7px;
+  float: left;
+}
+
+#artistcolumns .avatar img {
+  border-radius: 100%;
+  display: block;
+}
+
 #artistcolumns figure {
   display: inline-block;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -97,7 +113,6 @@
   margin-bottom: 20px;
   padding: 1px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  ;
 }
 
 #artistcolumns figure img {
@@ -105,7 +120,8 @@
 }
 
 #artistcolumns figure figcaption {
+
   border-top: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  margin-top: 11px;
+  padding-top: 10px;
+  margin-top: 1rem;
 }
